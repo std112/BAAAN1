@@ -636,11 +636,12 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => response.json())
             .then(data => {
                 if (data.avatar && data.name) {
-                    const avatarImg = document.querySelector(".playerAvatar img");
-                    const nameLink = document.querySelector(".responsive_menu_user_persona a");
+                    // Target the "User Involve" section
+                    const involveAvatar = document.querySelector('.player_avatar img');
+                    const involveName = document.querySelector('.player_name');
 
-                    if (avatarImg) avatarImg.src = data.avatar;
-                    if (nameLink) nameLink.textContent = data.name;
+                    if (involveAvatar) involveAvatar.src = data.avatar;
+                    if (involveName) involveName.textContent = data.name;
                 } else {
                     alert("Invalid profile data received.");
                 }
@@ -652,4 +653,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 </script>
+
 </body></html>
